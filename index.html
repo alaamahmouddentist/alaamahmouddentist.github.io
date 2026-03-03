@@ -1,165 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dr. Alaa Mahmoud | Dental Portfolio</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Alaa Mahmoud | Dental Portfolio</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<style>
-    :root {
-        --primary: #0f2747;    /* Deep Navy */
-        --accent: #2a9d8f;     /* Clinical Teal */
-        --light-bg: #f8fafc;   /* Soft Ice */
-        --white: #ffffff;
-        --text: #334155;
-    }
+    <style>
+        :root {
+            --primary: #0f2747;    /* Deep Navy */
+            --accent: #2a9d8f;     /* Clinical Teal */
+            --light-bg: #f8fafc;   /* Soft Ice */
+            --white: #ffffff;
+            --text: #334155;
+        }
 
-    html { scroll-behavior: smooth; }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        margin: 0;
-        font-family: 'Inter', sans-serif;
-        color: var(--text);
-        line-height: 1.6;
-    }
+        html { scroll-behavior: smooth; }
 
-    /* NAVBAR - Glassmorphism effect */
-    nav {
-        position: fixed;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        backdrop-filter: blur(10px);
-        padding: 20px 0;
-        text-align: center;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
 
-    nav a {
-        color: var(--primary);
-        text-decoration: none;
-        margin: 0 20px;
-        font-weight: 600;
-        transition: color 0.3s;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-    nav a:hover { color: var(--accent); }
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-    /* HERO SECTION */
-    #home {
-        background: linear-gradient(rgba(15, 39, 71, 0.8), rgba(15, 39, 71, 0.8)), url('hero.jpg') no-repeat center center/cover;
-        height: 100vh;
-        color: white;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+        nav a:hover { color: var(--accent); }
 
-    #home h1 {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-        margin-bottom: 10px;
-        font-weight: 700;
-    }
+        /* HERO SECTION */
+        #home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            /* Fallback color if hero.jpg is missing */
+            background: linear-gradient(rgba(15, 39, 71, 0.85), rgba(15, 39, 71, 0.85)), #0f2747;
+            background-image: linear-gradient(rgba(15, 39, 71, 0.85), rgba(15, 39, 71, 0.85)), url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 0 20px;
+        }
 
-    #home p {
-        font-size: 1.2rem;
-        opacity: 0.9;
-        font-weight: 300;
-        letter-spacing: 2px;
-    }
+        #home h1 {
+            font-size: clamp(2rem, 8vw, 4rem);
+            margin: 0;
+            font-weight: 700;
+        }
 
-    /* SECTION PADDING */
-    section { padding: 120px 20px; }
+        #home p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    /* ABOUT SECTION */
-    #about { background: var(--white); }
+        /* GENERAL SECTION STYLING */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    .about-container {
-        display: flex;
-        max-width: 1100px;
-        margin: 0 auto;
-        gap: 60px;
-        align-items: center;
-    }
+        /* ABOUT */
+        #about {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
 
-    .about-text { flex: 1; }
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
 
-    .about-text h2 {
-        font-size: 36px;
-        color: var(--primary);
-        margin-bottom: 20px;
-        position: relative;
-    }
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 15px 15px 0px var(--accent);
+            background: #eee; /* placeholder color */
+        }
 
-    .about-text h2::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 4px;
-        background: var(--accent);
-        margin-top: 10px;
-    }
+        .about-text {
+            flex: 1.5;
+            min-width: 300px;
+        }
 
-    .about-image img {
-        width: 320px;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 20px;
-        box-shadow: 20px 20px 0px var(--light-bg);
-    }
+        .about-text h2 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
 
-    /* SERVICES SECTION */
-    #services { background: var(--light-bg); text-align: center; }
+        /* SERVICES */
+        #services-wrapper { background-color: var(--light-bg); }
 
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        max-width: 1100px;
-        margin: 40px auto 0;
-    }
+        .services-header { text-align: center; margin-bottom: 50px; }
 
-    .service-card {
-        background: var(--white);
-        padding: 30px;
-        border-radius: 15px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        border-bottom: 4px solid transparent;
-    }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-    .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        border-bottom: 4px solid var(--accent);
-    }
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
 
-    .service-card h3 { color: var(--primary); margin: 15px 0; }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
 
-    /* CONTACT SECTION */
-    #contact {
-        background: var(--primary);
-        color: white;
-        text-align: center;
-    }
+        .service-card h3 { color: var(--primary); margin-bottom: 15px; }
 
-    .contact-links a {
-        display: inline-block;
-        margin: 15px;
-        padding: 15px 35px;
-        background: var(--accent);
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: 0.3s;
-    }
+        /* CONTACT */
+        #contact-wrapper {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
 
-    .contact-links a:hover {
-        background: var(--white);
-        color: var(--primary);
-        transform: scale
+        .contact-links { margin-top: 30px; }
+
+        .contact-links a {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            #about { text-align: center; flex-direction: column-reverse; }
+            #home h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services-wrapper">Services</a>
+        <a href="#contact-wrapper">Contact</a>
+    </nav>
+
+    <div id="home">
+        <h1>Dr. Alaa Mahmoud</h1>
+        <p>Dental Student & Clinical Researcher</p>
+    </div>
+
+    <section id="about">
+        <div class="about-image">
+            <img src="profile.jpg" alt="Dr. Alaa Mahmoud">
+        </div>
+        <div class="about-text">
+            <h2>Compassionate Dental Care</h2>
+            <p>I am dedicated to clinical excellence and community-based healthcare. My approach combines technical precision with a deep focus on patient comfort and pediatric specialization.</p>
+            <p>I believe that a visit to the dentist should be informative, painless, and empowering for the patient.</p>
+        </div>
+    </section>
+
+    <div id="services-wrapper">
+        <section id="services">
+            <div class="services-header">
+                <h2>Clinical Expertise</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Preventive Care</h3>
+                    <p>Scaling, polishing, and oral hygiene education to prevent periodontal disease.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Aesthetic Restorations</h3>
+                    <p>High-quality composite fillings that mimic natural tooth structure and function.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Endodontics</h3>
+                    <p>Standard root canal treatments focused on pain relief and tooth preservation.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="contact-wrapper">
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Available for clinical collaborations and professional inquiries.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/alaa-mahmoud-3727622b2" target="_blank">LinkedIn Profile</a>
+                <a href="mailto:alaa994006784@gmail.com">Send Email</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 Dr. Alaa Mahmoud | Professional Dental Portfolio
+    </footer>
+
+</body>
+</html>
